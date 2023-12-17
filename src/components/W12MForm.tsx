@@ -8,6 +8,7 @@ import ReasonForSparing from "./reasonForSparing";
 import WhatIs4plus4 from "./whatIs4Plus4";
 import validateSpeciesName from "../validate/validate_species_name";
 import validateReasonForSparing from "../validate/validate_reason_for_sparing";
+import validateNumberOfBeings from "../validate/validate_number_of_beings";
 
 const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState("dolphins");
@@ -37,8 +38,9 @@ const W12MForm = () => {
           onChangePlanetName={(value) => setPlanetName(value)}
         />
         <NumberOfBeings
-          numberOfBeings={numberOfBeings.toLocaleString()}
+          numberOfBeings={numberOfBeings}
           onChangeNumberOfBeings={(value) => setNumberOfBeings(parseInt(value))}
+          validate={validateNumberOfBeings}
         />
         <WhatIs4plus4
           mathCheck={mathCheck}
