@@ -1,12 +1,12 @@
 import ErrorMessage from "./errorMessage";
 
-interface WhatIs4plus4Props {
+interface WhatIs2plus2Props {
   mathCheck: string;
   onChangeMathCheck: (value: string) => void;
   validate: (answer: string) => string[];
 }
 
-const WhatIs4plus4: React.FC<WhatIs4plus4Props> = ({
+const WhatIs2plus2: React.FC<WhatIs2plus2Props> = ({
   mathCheck,
   onChangeMathCheck,
   validate,
@@ -29,4 +29,4 @@ const WhatIs4plus4: React.FC<WhatIs4plus4Props> = ({
     </>
   );
 };
-export default WhatIs4plus4;
+export default WhatIs2plus2;

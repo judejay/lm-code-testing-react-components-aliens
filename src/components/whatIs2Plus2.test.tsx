@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import WhatIs4Plus4 from "./whatIs4Plus4";
+import WhatIs4Plus4 from "./whatIs2Plus2";
 
 test("renders label for math check", () => {
   const requiredProps = {

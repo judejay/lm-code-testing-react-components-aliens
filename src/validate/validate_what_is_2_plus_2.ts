@@ -1,4 +1,4 @@
-const validateWhatIs4Plus4: (answer: string) => string[] = (answer) => {
+const validateWhatIs2Plus2: (answer: string) => string[] = (answer) => {
   const validationResult = [];
   if (answer !== "4") {
     validationResult.push("Incorrect answer");
@@ -7,4 +7,4 @@ const validateWhatIs4Plus4: (answer: string) => string[] = (answer) => {
   return validationResult;
 };
 
-export default validateWhatIs4Plus4;
+export default validateWhatIs2Plus2;

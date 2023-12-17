@@ -5,12 +5,12 @@ import PlanetName from "./planetName";
 import NumberOfBeings from "./numberOfBeings";
 import Result from "./result";
 import ReasonForSparing from "./reasonForSparing";
-import WhatIs4plus4 from "./whatIs4Plus4";
+import WhatIs4plus4 from "./whatIs2Plus2";
 import validateSpeciesName from "../validate/validate_species_name";
 import validateReasonForSparing from "../validate/validate_reason_for_sparing";
 import validateNumberOfBeings from "../validate/validate_number_of_beings";
 import validatePlanetName from "../validate/validate_planet_name";
-import validateWhatIs4Plus4 from "../validate/validate_what_is_4_plus_4";
+import validateWhatIs2Plus2 from "../validate/validate_what_is_2_plus_2";
 
 const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState("dolphins");
@@ -47,7 +47,7 @@ const W12MForm = () => {
         <WhatIs4plus4
           mathCheck={mathCheck}
           onChangeMathCheck={(value) => setMathCheck(value)}
-          validate={validateWhatIs4Plus4}
+          validate={validateWhatIs2Plus2}
         />
         <ReasonForSparing
           reasonForSparing={reasonForSparing}
