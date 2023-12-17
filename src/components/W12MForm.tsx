@@ -9,6 +9,7 @@ import WhatIs4plus4 from "./whatIs4Plus4";
 import validateSpeciesName from "../validate/validate_species_name";
 import validateReasonForSparing from "../validate/validate_reason_for_sparing";
 import validateNumberOfBeings from "../validate/validate_number_of_beings";
+import validatePlanetName from "../validate/validate_planet_name";
 
 const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState("dolphins");
@@ -36,6 +37,7 @@ const W12MForm = () => {
         <PlanetName
           planetName={planetName}
           onChangePlanetName={(value) => setPlanetName(value)}
+          validate={validatePlanetName}
         />
         <NumberOfBeings
           numberOfBeings={numberOfBeings}
