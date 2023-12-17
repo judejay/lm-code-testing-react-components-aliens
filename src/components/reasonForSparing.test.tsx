@@ -21,3 +21,14 @@ test("Reason for sparing input field exists", () => {
   const inputField = screen.getByLabelText(/Reason for sparing/i);
   expect(inputField).toBeInTheDocument();
 });
+
+test("Reason for sparing  input field displays value passed in through props", () => {
+  const props = {
+    reasonForSparing: "no reason",
+    onChangeReasonForSparing: () => {},
+  };
+  render(<ReasonForSparing {...props} />);
+  const inputField: HTMLInputElement =
+    screen.getByLabelText(/Reason for sparing/i);
+  expect(inputField.value).toBe("no reason");
+});

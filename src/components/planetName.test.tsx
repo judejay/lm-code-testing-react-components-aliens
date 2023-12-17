@@ -18,3 +18,13 @@ test("Planet name input field exists", () => {
   const inputField = screen.getByLabelText(/Planet Name/i);
   expect(inputField).toBeInTheDocument();
 });
+
+test("Planet name input field displays value passed in through props", () => {
+  const props = {
+    planetName: "Earth",
+    onChangePlanetName: () => {},
+  };
+  render(<PlanetName {...props} />);
+  const inputField: HTMLInputElement = screen.getByLabelText(/Planet Name/i);
+  expect(inputField.value).toBe("Earth");
+});

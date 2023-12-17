@@ -18,3 +18,13 @@ test("Species Name input field exists", () => {
   const inputField = screen.getByLabelText(/Species Name/i);
   expect(inputField).toBeInTheDocument();
 });
+
+test("Species Name input field displays value passed in through props", () => {
+  const props = {
+    speciesName: "Dolphins",
+    onChangeSpeciesName: () => {},
+  };
+  render(<SpeciesName {...props} />);
+  const inputField: HTMLInputElement = screen.getByLabelText(/Species Name/i);
+  expect(inputField.value).toBe("Dolphins");
+});
