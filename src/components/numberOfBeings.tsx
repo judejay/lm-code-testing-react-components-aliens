@@ -1,11 +1,11 @@
 import React from "react";
 
-interface NumberOfBeings {
+interface NumberOfBeingsProps {
   numberOfBeings: string;
   onChangeNumberOfBeings: (value: string) => void;
 }
 
-const NumberOfBeings: React.FC<NumberOfBeings> = ({
+const NumberOfBeings: React.FC<NumberOfBeingsProps> = ({
   numberOfBeings,
   onChangeNumberOfBeings,
 }) => {
