@@ -5,7 +5,7 @@ import PlanetName from "./planetName";
 import NumberOfBeings from "./numberOfBeings";
 import Result from "./result";
 import ReasonForSparing from "./reasonForSparing";
-import WhatIs4plus4 from "./whatIs4plus4";
+import WhatIs4plus4 from "./whatIs4Plus4";
 
 const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState("dolphins");
