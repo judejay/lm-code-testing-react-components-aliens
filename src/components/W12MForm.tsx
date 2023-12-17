@@ -5,6 +5,7 @@ import PlanetName from "./planetName";
 import NumberOfBeings from "./numberOfBeings";
 import Result from "./result";
 import ReasonForSparing from "./reasonForSparing";
+import WhatIs4plus4 from "./whatIs4plus4";
 
 const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState("dolphins");
@@ -12,6 +13,7 @@ const W12MForm = () => {
   const [numberOfBeings, setNumberOfBeings] = useState(0);
   const [submitted, setSubmitted] = useState(false);
   const [reasonForSparing, setReasonForSparing] = useState("");
+  const [mathCheck, setMathCheck] = useState("");
 
   function handleSubmit(event: FormEvent<HTMLFormElement>): void {
     event.preventDefault();
@@ -34,6 +36,10 @@ const W12MForm = () => {
         <NumberOfBeings
           numberOfBeings={numberOfBeings.toLocaleString()}
           onChangeNumberOfBeings={(value) => setNumberOfBeings(parseInt(value))}
+        />
+        <WhatIs4plus4
+          mathCheck={mathCheck}
+          onChangeMathCheck={(value) => setMathCheck(value)}
         />
         <ReasonForSparing
           reasonForSparing={reasonForSparing}
