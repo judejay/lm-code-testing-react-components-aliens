@@ -22,7 +22,7 @@ const W12MForm = () => {
   return (
     <section className="w12MForm">
       <W12MHeader />
-      <form onSubmit={handleSubmit}>
+      <form aria-label="pity-form" onSubmit={handleSubmit}>
         <SpeciesName
           speciesName={speciesName}
           onChangeSpeciesName={(value) => setSpeciesName(value)}
@@ -39,7 +39,7 @@ const W12MForm = () => {
           reasonForSparing={reasonForSparing}
           onChangeReasonForSparing={(value) => setReasonForSparing(value)}
         />
-        <input type="submit" value="Submit" />
+        <input name="Sign Up" type="submit" value="Submit" />
       </form>
       {submitted && (
         <Result
