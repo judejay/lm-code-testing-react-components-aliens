@@ -34,3 +34,28 @@ test("Planet name input field displays value passed in through props", () => {
   const inputField: HTMLInputElement = screen.getByLabelText(/Planet Name/i);
   expect(inputField.value).toBe("Earth");
 });
+
+test("Validation rules pass test", () => {
+  const mockValidatePlanetName = jest.fn();
+  const props = {
+    planetName: "Earth",
+    onChangePlanetName: () => {},
+    validate: mockValidatePlanetName.mockReturnValue([]),
+  };
+  render(<PlanetName {...props} />);
+
+  expect(screen.queryByTestId("error")).not.toBeInTheDocument();
+});
+test("Validation rules fail test", () => {
+  const mockValidatePlanetName = jest.fn();
+  const props = {
+    planetName: "Earth",
+    onChangePlanetName: () => {},
+    validate: mockValidatePlanetName.mockReturnValue([
+      "Must not contain special characters",
+    ]),
+  };
+  render(<PlanetName {...props} />);
+
+  expect(screen.getByTestId("error")).toBeInTheDocument();
+});
