@@ -4,12 +4,14 @@ import SpeciesName from "./speciesName";
 import PlanetName from "./planetName";
 import NumberOfBeings from "./numberOfBeings";
 import Result from "./result";
+import ReasonForSparing from "./reasonForSparing";
 
 const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState("dolphins");
   const [planetName, setPlanetName] = useState("");
   const [numberOfBeings, setNumberOfBeings] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [reasonForSparing, setReasonForSparing] = useState("");
 
   function handleSubmit(event: FormEvent<HTMLFormElement>): void {
     event.preventDefault();
@@ -33,6 +35,10 @@ const W12MForm = () => {
           numberOfBeings={numberOfBeings.toLocaleString()}
           onChangeNumberOfBeings={(value) => setNumberOfBeings(parseInt(value))}
         />
+        <ReasonForSparing
+          reasonForSparing={reasonForSparing}
+          onChangeReasonForSparing={(value) => setReasonForSparing(value)}
+        />
         <input type="submit" value="Submit" />
       </form>
       {submitted && (
@@ -40,6 +46,7 @@ const W12MForm = () => {
           speciesName={speciesName}
           planetName={planetName}
           numberOfBeings={numberOfBeings}
+          reasonForSparing={reasonForSparing}
         />
       )}
     </section>
