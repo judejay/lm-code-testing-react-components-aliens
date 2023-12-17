@@ -11,7 +11,7 @@ const NumberOfBeings: React.FC<NumberOfBeings> = ({
 }) => {
   return (
     <>
-      <label htmlFor="numberOfBeings">Species Name</label>
+      <label htmlFor="numberOfBeings">Number of Beings</label>
       <input
         id="numberOfBeings"
         type="number"
