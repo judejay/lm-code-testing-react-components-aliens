@@ -5,6 +5,7 @@ test("renders label for math check", () => {
   const requiredProps = {
     mathCheck: "2",
     onChangeMathCheck: () => {},
+    validate: () => [],
   };
   render(<WhatIs4Plus4 {...requiredProps} />);
 
