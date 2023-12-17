@@ -5,6 +5,7 @@ test("renders form element", () => {
   const props = {
     reasonForSparing: "no reason",
     onChangeReasonForSparing: () => {},
+    validate: () => [],
   };
   render(<ReasonForSparing {...props} />);
 
@@ -16,6 +17,7 @@ test("Reason for sparing input field exists", () => {
   const props = {
     reasonForSparing: "no reason",
     onChangeReasonForSparing: () => {},
+    validate: () => [],
   };
   render(<ReasonForSparing {...props} />);
   const inputField = screen.getByLabelText(/Reason for sparing/i);
@@ -26,6 +28,7 @@ test("Reason for sparing  input field displays value passed in through props", (
   const props = {
     reasonForSparing: "no reason",
     onChangeReasonForSparing: () => {},
+    validate: () => [],
   };
   render(<ReasonForSparing {...props} />);
   const inputField: HTMLInputElement =

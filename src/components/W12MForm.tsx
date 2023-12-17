@@ -7,6 +7,7 @@ import Result from "./result";
 import ReasonForSparing from "./reasonForSparing";
 import WhatIs4plus4 from "./whatIs4Plus4";
 import validateSpeciesName from "../validate/validate_species_name";
+import validateReasonForSparing from "../validate/validate_reason_for_sparing";
 
 const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState("dolphins");
@@ -46,6 +47,7 @@ const W12MForm = () => {
         <ReasonForSparing
           reasonForSparing={reasonForSparing}
           onChangeReasonForSparing={(value) => setReasonForSparing(value)}
+          validate={validateReasonForSparing}
         />
         <input name="Sign Up" type="submit" value="Submit" />
       </form>
