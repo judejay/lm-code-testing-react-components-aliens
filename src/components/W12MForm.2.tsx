@@ -3,9 +3,8 @@ import W12MHeader from "./W12MHeader";
 import SpeciesName from "./speciesName";
 import PlanetName from "./planetName";
 import NumberOfBeings from "./numberOfBeings";
-import Result from "./result";
 
-const W12MForm = () => {
+export const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState("dolphins");
   const [planetName, setPlanetName] = useState("");
   const [numberOfBeings, setNumberOfBeings] = useState(0);
@@ -36,14 +35,12 @@ const W12MForm = () => {
         <input type="submit" value="Submit" />
       </form>
       {submitted && (
-        <Result
-          speciesName={speciesName}
-          planetName={planetName}
-          numberOfBeings={numberOfBeings}
-        />
+        <>
+          <p>speciesName: {speciesName}</p>
+          <p>planetName: {planetName}</p>
+          <p>numberOfBeings: {numberOfBeings}</p>
+        </>
       )}
     </section>
   );
 };
-
-export default W12MForm;
