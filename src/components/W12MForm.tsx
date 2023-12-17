@@ -23,7 +23,6 @@ const W12MForm = () => {
   function handleSubmit(event: FormEvent<HTMLFormElement>): void {
     event.preventDefault();
     setSubmitted(true);
-    console.log(speciesName + planetName + numberOfBeings);
   }
 
   return (

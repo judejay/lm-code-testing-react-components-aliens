@@ -5,8 +5,8 @@ interface ErrorMessageProps {
 const ErrorMessage: React.FC<ErrorMessageProps> = ({ message }) => {
   return (
     <>
-      {message.map((error) => (
-        <div data-testid="error" style={{ color: "red" }}>
+      {message.map((error, index) => (
+        <div key={index} data-testid="error" style={{ color: "red" }}>
           {" "}
           {error}
         </div>
