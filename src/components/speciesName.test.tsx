@@ -8,3 +8,13 @@ test("renders form element", () => {
   const labelText = screen.getByText(/Species Name/i);
   expect(labelText).toBeInTheDocument();
 });
+
+test("Species Name input field exists", () => {
+  const props = {
+    speciesName: "Dolphins",
+    onChangeSpeciesName: () => {},
+  };
+  render(<SpeciesName {...props} />);
+  const inputField = screen.getByLabelText(/Species Name/i);
+  expect(inputField).toBeInTheDocument();
+});
