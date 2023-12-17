@@ -6,7 +6,10 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({ message }) => {
   return (
     <>
       {message.map((error) => (
-        <div style={{ color: "red" }}> {error}</div>
+        <div data-testid="error" style={{ color: "red" }}>
+          {" "}
+          {error}
+        </div>
       ))}
       ;
     </>

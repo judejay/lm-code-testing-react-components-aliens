@@ -34,3 +34,28 @@ test("Species Name input field displays value passed in through props", () => {
   const inputField: HTMLInputElement = screen.getByLabelText(/Species Name/i);
   expect(inputField.value).toBe("Dolphins");
 });
+
+test("Validation rules pass test", () => {
+  const mockValidateSpeciesName = jest.fn();
+  const props = {
+    speciesName: "Dolphins",
+    onChangeSpeciesName: () => {},
+    validate: mockValidateSpeciesName.mockReturnValue([]),
+  };
+  render(<SpeciesName {...props} />);
+
+  expect(screen.queryByTestId("error")).not.toBeInTheDocument();
+});
+test("Validation rules fail test", () => {
+  const mockValidateSpeciesName = jest.fn();
+  const props = {
+    speciesName: "Dolphins",
+    onChangeSpeciesName: () => {},
+    validate: mockValidateSpeciesName.mockReturnValue([
+      "Must be between 3 and 23 characters",
+    ]),
+  };
+  render(<SpeciesName {...props} />);
+
+  expect(screen.getByTestId("error")).toBeInTheDocument();
+});

@@ -33,5 +33,5 @@ test("Number of beings  input field displays value passed in through props", () 
   render(<NumberOfBeings {...props} />);
   const inputField: HTMLInputElement =
     screen.getByLabelText(/Number of Beings/i);
-  expect(inputField.value).toBe(10);
+  expect(inputField.value).toBe("10");
 });
